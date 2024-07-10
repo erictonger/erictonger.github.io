@@ -52,6 +52,8 @@ outputs:
 # Enable global emoji support
 enableEmoji: true
 
+
+
 # Site parameters
 params:
   background: "images/site/test.jpeg"
@@ -63,6 +65,8 @@ params:
     # Enable portfolio section
     portfolio:
       enable: true
+    darkMode:
+      enable: true
 
     # Enable blog posts
     blog:
@@ -73,6 +77,35 @@ params:
     toc:
       enable: true
 
+    # Show tags under the post title
+    tags:
+      enable: true
+      on_card: true # enables tags in post cards
+    readingTime:
+      enable: true
+    
+    # Enable & configure "Notes" features
+    # notes:
+    #   enable: true
+
+    blog:
+      enable: true
+      showAuthor: true # shows the author of post (defaults true)
+      # Share post on different social media
+      shareButtons:
+        facebook: true
+        twitter: true
+        linkedin: true
+        reddit: true
+        whatsapp: true
+        email: true
+        # tumblr: true
+        # pocket: true
+        # diaspora: true
+        # mastodon: true
+
+
   # Configure footer
   footer:
     enable: true
+    

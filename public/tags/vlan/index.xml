@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vlan on Eric&#39;s Blog</title>
+    <link>https://erictonger.github.io/tags/vlan/</link>
+    <description>Recent content in Vlan on Eric&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 09 Jul 2024 18:32:20 +0800</lastBuildDate><atom:link href="https://erictonger.github.io/tags/vlan/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>VLAN</title>
+      <link>https://erictonger.github.io/posts/vlan/</link>
+      <pubDate>Tue, 09 Jul 2024 18:32:20 +0800</pubDate>
+      
+      <guid>https://erictonger.github.io/posts/vlan/</guid>
+      <description>how to create vlan</description>
+    </item>
+    
+    
+  </channel>
+</rss>

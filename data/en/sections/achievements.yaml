@@ -1,0 +1,27 @@
+# section information
+section:
+  name: Achievements
+  id: achievements
+  enable: true
+  weight: 7
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+# my achievements
+achievements:
+- title: HCIE R&S
+  image: images/achievements/ie-rs.jpg
+  summary: HCIE Certificate
+- title: HCIE TEST CENTER
+  image: images/achievements/test-center.jpg
+  summary: Pass the HCIE contest
+# - title: Customer site delivery
+#   image: images/achievements/nk-custom.jpg
+#   summary: By Site Delivery for customer
+- title: Daily Work
+  image: images/achievements/work-time.jpg
+  summary: Daily work for time
+# - title: SPOT BONUS
+#   image: images/achievements/spot-bonus.jpg
+#   summary: Get the SPOT BONUS from ByteDance

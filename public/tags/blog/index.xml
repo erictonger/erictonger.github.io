@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Eric&#39;s Blog</title>
+    <link>https://erictonger.github.io/tags/blog/</link>
+    <description>Recent content in Blog on Eric&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 10 Jul 2024 14:17:50 +0800</lastBuildDate><atom:link href="https://erictonger.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title></title>
+      <link>https://erictonger.github.io/posts/delpoy_site/</link>
+      <pubDate>Wed, 10 Jul 2024 14:17:50 +0800</pubDate>
+      
+      <guid>https://erictonger.github.io/posts/delpoy_site/</guid>
+      <description>how to deploy the site</description>
+    </item>
+    
+    
+  </channel>
+</rss>

@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>VLAN</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="stylesheet" href="/application.4d6a544f9b1066b5e9c5c8df01cdefd8317ade3c0403d45c2388255e465efad3.css" integrity="sha256-TWpUT5sQZrXpxcjfAc3v2DF63jwEA9RcI4glXkZe&#43;tM=" />
+
+
+
+
+
+<meta property="og:url" content="https://erictonger.github.io/posts/vlan/">
+  <meta property="og:site_name" content="Eric&#39;s Blog">
+  <meta property="og:title" content="VLAN">
+  <meta property="og:description" content="how to create vlan">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-07-09T18:32:20+08:00">
+    <meta property="article:modified_time" content="2024-07-09T18:32:20+08:00">
+    <meta property="article:tag" content="HCIE">
+    <meta property="article:tag" content="Vlan">
+
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="VLAN">
+  <meta name="twitter:description" content="how to create vlan">
+
+    
+    
+<meta name="description" content="VLAN" />
+
+
+    
+
+
+
+
+<script>
+      theme = localStorage.getItem('darkmode:color-scheme') || 'system';
+      if (theme == 'system') {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          theme = 'dark';
+        } else {
+          theme = 'light';
+        }
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    </script>
+  </head>
+
+  <body class="type-posts kind-page" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="80">
+    <div class="container-fluid bg-secondary wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+
+<nav class="navbar navbar-expand-xl top-navbar shadow " id="top-navbar">
+  <div class="container">
+    
+    <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button">
+      <i data-feather="sidebar"></i>
+    </button>
+    
+    <a class="navbar-brand" href="/">
+      Eric&#39;s Site</a>
+    <button
+      class="navbar-toggler navbar-light"
+      id="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#top-nav-items"
+      aria-label="menu"
+    >
+      <i data-feather="menu"></i>
+    </button>
+
+    <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
+      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/#home">Home</a>
+        </li>
+        
+          
+          
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#about">About</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#skills">Skills</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#experiences">Experiences</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#projects">Projects</a>
+                </li>
+              
+            
+            
+              
+              
+            
+            
+              
+              
+            
+            
+              
+              
+            
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                
+                  
+                    
+                    
+                  
+                  
+                    
+                    
+                  
+                  
+                    
+                    
+                  
+                  
+                    
+                    
+                  
+                  
+                    
+                    
+                      <a class="dropdown-item" href="/#recent-posts">Recent Posts</a>
+                    
+                  
+                  
+                    
+                    
+                      <a class="dropdown-item" href="/#featured-posts">Featured Posts</a>
+                    
+                  
+                  
+                    
+                    
+                      <a class="dropdown-item" href="/#achievements">Achievements</a>
+                    
+                  
+              </div>
+            </li>
+          
+        
+        
+          <div id="top-navbar-divider"></div>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="blog-link" href="/posts">Posts</a>
+          </li>
+        
+        
+        
+            
+              <li class="nav-item">
+                <a class="nav-link" href="https://blog.csdn.net/qq_41959899?type=blog">CSDN</a>
+              </li>
+            
+        
+            
+              <li class="nav-item">
+                <a class="nav-link" href="https://github.com/erictonger">Github</a>
+              </li>
+            
+        
+        
+        
+          <li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
+  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <img id="navbar-theme-icon-svg" class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+</a>
+<div id="themeMenu" class="dropdown-menu dropdown-menu-icons-only" aria-labelledby="themeSelector">
+  <a class="dropdown-item nav-link" href="#" data-scheme="light">
+    <img class="theme-icon" src="/icons/sun-svgrepo-com.svg" width=20 alt="Light Theme">
+  </a>
+  <a class="dropdown-item nav-link" href="#" data-scheme="dark">
+    <img class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+  </a>
+  <a class="dropdown-item nav-link" href="#" data-scheme="system">
+    <img class="theme-icon" src="/icons/computer-svgrepo-com.svg" width=20 alt="System Theme">
+  </a>
+</div>
+</li>
+
+        
+      </ul>
+    </div>
+  </div>
+  
+  
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/search">
+          <input type="text" name="keyword" value="" placeholder="Search" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts/" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/introduction/" title="Introduction">Introduction</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/net/"> Network</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/net/lab/"> Lab</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/net/lab/vlan/" title="Vlan">Vlan</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/net/ospf/" title="OSPF">OSPF</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/" title="Linux">Linux</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/delpoy_site/" title="Delpoy_site">Delpoy_site</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i data-feather="minus-circle"></i><a class="active list-link" href=""> ie-tech</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active list-link" href="/posts/vlan/" title="Vlan">Vlan</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(/images/posts/dc.jpeg);'>
+      </div>
+
+      
+      <div class="page-content">
+        
+        <div class="author-profile ms-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/author/heisenberg_huf008da6d7cb3915467e7c9f0d049b064_23710_120x120_fit_q75_box.jpeg' alt="Author Image">
+          <h5 class="author-name">Eirc Tong</h5>
+          <p class="text-muted">Tuesday, July 9, 2024 | 1 minute</p>
+        </div>
+        
+        
+        <div class="title">
+          <h1>VLAN</h1>
+        </div>
+
+        
+
+        
+          <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/hcie/" class="btn btn-sm btn-info">HCIE</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/vlan/" class="btn btn-sm btn-info">vlan</a></li>
+    
+  </ul>
+</div>
+
+        
+        <div class="post-content" id="post-content">
+          <p>ggg</p>
+<h1 id="1-initial">1. initial</h1>
+<p>123</p>
+<h1 id="2-configration-a-vlan">2. configration a vlan</h1>
+<p>777</p>
+<h1 id="3-don">3. don</h1>
+<p>lll</p>
+
+        </div>
+
+        
+        <div class="row ps-3 pe-3">
+        
+          <div class="col-md-6 share-buttons">
+          
+            <strong>Share on:</strong>
+            
+            <a class="btn icon-button bg-facebook" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2ferictonger.github.io%2fposts%2fvlan%2f" target="_blank">
+              <i class="fab fa-facebook"></i>
+            </a>
+            
+            
+                <a class="btn icon-button bg-twitter" href="https://twitter.com/share?url=https%3a%2f%2ferictonger.github.io%2fposts%2fvlan%2f&text=VLAN&via=Eric%27s%20Blog" target="_blank">
+                  <i class="fab fa-twitter"></i>
+                </a>
+            
+            
+                <a  class="btn icon-button bg-reddit" href="https://reddit.com/submit?url=https%3a%2f%2ferictonger.github.io%2fposts%2fvlan%2f&title=VLAN" target="_blank">
+                  <i class="fab fa-reddit"></i>
+                </a>
+            
+            
+            
+            
+                <a class="btn icon-button bg-linkedin" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2ferictonger.github.io%2fposts%2fvlan%2f&title=VLAN" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+            
+            
+             
+            
+                 <a class="btn icon-button bg-whatsapp" href="https://api.whatsapp.com/send?text=VLAN https%3a%2f%2ferictonger.github.io%2fposts%2fvlan%2f" target="_blank">
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+            
+            
+                <a class="btn icon-button" href="mailto:?subject=VLAN&body=https%3a%2f%2ferictonger.github.io%2fposts%2fvlan%2f" target="_blank">
+                  <i class="fas fa-envelope-open-text"></i>
+                </a>
+            
+          
+          </div>
+
+        
+        
+          
+            
+          
+          <div class="col-md-6 btn-improve-page">
+             
+               <a href="https://github.com/erictonger/erictonger.github.io/edit/eric-blog-toha-style/content/posts/vlan.md" title="Improve this page" target="_blank" rel="noopener">
+            
+                <i class="fas fa-code-branch"></i>
+                Improve this page
+              </a>
+          </div>
+        
+        </div>
+
+
+
+      
+      <hr />
+        
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+    
+    
+  
+  
+
+
+<div class="row next-prev-navigator">
+  
+    <div class="col-md-6 previous-article">
+      <a href="/posts/delpoy_site/" title="" class="btn filled-button">
+        <div><i class="fas fa-chevron-circle-left"></i> Prev</div>
+        <div class="next-prev-text"></div>
+      </a>
+    </div>
+  
+  
+</div>
+
+      <hr />
+
+      
+      
+
+      
+      
+
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Scroll to top">
+    <i class="fas fa-chevron-circle-up"></i>
+  </a>
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center ps-3">Table of Contents</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents"></nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+    
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-start">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="https://erictonger.github.io/#about">About</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="https://erictonger.github.io/#skills">Skills</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="https://erictonger.github.io/#experiences">Experiences</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="https://erictonger.github.io/#projects">Projects</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="https://erictonger.github.io/#recent-posts">Recent Posts</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="https://erictonger.github.io/#featured-posts">Featured Posts</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="https://erictonger.github.io/#achievements">Achievements</a>
+                </li>
+              
+            
+              
+                
+              
+                
+              
+            
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Contact me:</h5>
+          <ul>
+            
+              
+                <li><a href=mailto:erichen998@gmial.com target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>erichen998@gmial.com</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://github.com/erictonger target="_blank" rel="noopener">
+                  <span><i class="fab fa-github"></i></span> <span>erictonger</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://www.linkedin.com/in/erictonger target="_blank" rel="noopener">
+                  <span><i class="fab fa-linkedin"></i></span> <span>Eirc Tong</span>
+                </a></li>
+              
+            
+              
+                <li><span><i class="fas fa-phone-alt"></i></span> <span>&#43;77-7777777</span></li>
+              
+            
+          </ul>
+        </div>
+        
+        
+        
+          
+          <div class="col-md-4 col-sm-12">
+            <p>Stay up to date with email notification</p>
+            
+              <form method='post' action='https://blogtrottr.com'>
+              <div class="form-group">
+              <input type='email' class="form-control" name='btr_email' placeholder="Enter email"/><br />
+              <input type='hidden' name='btr_url' value='https://erictonger.github.io//index.xml' />
+              <input type='hidden' name='schedule_type' value='1' />
+              <small id="emailHelp" class="form-text text-muted">By entering your email address, you agree to receive the newsletter of this website.</small>
+              <button type="submit" class="btn btn-info"> Submit </button>
+              </div>
+              </form>
+            
+          </div>
+        
+      </div>
+    </div>
+    
+    
+    <hr />
+    <div class="container">
+      <div class="row text-start">
+        <div class="col-md-4">
+          <a id="theme" href="https://github.com/hugo-toha/toha" target="_blank" rel="noopener">
+            <img src="/images/theme-logo_hu8376fd15465fef26ffe66b6bcf0ca686_13669_32x0_resize_box_3.png" alt="Toha Theme Logo">
+            Toha
+          </a>
+        </div>
+        <div class="col-md-4 text-center">© 2024 Copyright.</div>
+        <div class="col-md-4 text-end">
+          <a id="hugo" href="https://gohugo.io/" target="_blank" rel="noopener">Powered by
+          <img
+            src="/images/hugo-logo.svg"
+            alt="Hugo Logo"
+            height="18"
+          />
+          </a>
+        </div>
+      </div>
+    </div>
+    
+  </footer>
+
+
+    <script src="/application.a5559917c2a2ba48176a9bd463ab37b48ad6ba370b6a2078d396a1f608695f49.js" integrity="sha256-pVWZF8KiukgXapvUY6s3tIrWujcLaiB405ah9ghpX0k=" defer></script>
+
+
+    
+     
+
+    
+</body>
+</html>

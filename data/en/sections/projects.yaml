@@ -1,0 +1,49 @@
+# section information
+section:
+  name: Projects
+  id: projects
+  enable: true
+  weight: 4
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+# filter buttons
+buttons:
+- name: All
+  filter: "all"
+- name: refactoring
+  filter: "refactoring"
+- name: architecture
+  filter: "architecture"
+- name: Hobby
+  filter: "hobby"
+
+# my projects
+projects:
+- name: Approval Application Refactoring
+  logo: images/sections/projects/ll.png
+  role: Key Developer
+  timeline: "March 2022 - July 2022"
+  url: https://open.larkoffice.com/document/server-docs/approval-v4/approval-overview
+  #url: ""
+  summary: Refactoring of Approval Application.
+  tags: ["professional", "refactoring"]
+
+- name: DHCP Architecture Upgrade
+  logo: images/sections/projects/bluecat.png
+  role: Lead and Executor
+  timeline: "March 2022 - July 2022"
+  url: https://docs.bluecatnetworks.com/r/Address-Manager-Administration-Guide/About-xHA/9.3.0
+  #url: ""
+  summary: Refactoring of Approval Application.
+  tags: ["professional", "architecture"]
+
+- name: Authorization Architecture Separation
+  logo: images/sections/projects/ise.png
+  role: Lead and Executor
+  timeline: "July 2022 - Nov 2022"
+  url: https://www.cisco.com/c/en/us/td/docs/security/ise/3-0/install_guide/b_ise_InstallationGuide30/b_ise_InstallationGuide30_chapter_1.html
+  #url: ""
+  summary: Refactoring of Approval Application.
+  tags: ["professional", "architecture"]

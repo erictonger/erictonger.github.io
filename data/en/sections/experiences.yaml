@@ -1,0 +1,52 @@
+# section information
+section:
+  name: Experiences
+  id: experiences
+  enable: true
+  weight: 3
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true 
+
+# Your experiences
+experiences:
+- company:
+    name: Bytedance Ltd.
+    url: https://www.bytedance.com/en/
+    location: CDC, China
+    # company overview
+    overview: At ByteDance, we call our values "ByteStyles." They help guide how we work together, and how we aim to bring our Mission and Vision to life.
+  positions:
+  - designation: Platform development Engineer
+    start: Jan 2023
+    responsibilities:
+    - Develop the start cmdb new features for NaaS Project.
+    - Develop the back-end of NaaS, such CMDB and Hooks.
+    - Collaborate with front-end team for integration of new-features.
+  - designation: Network development Engineer
+    start: Jan 2022
+    end: Jan 2023
+    responsibilities:
+    - Design, develop and manage basic Server Monitoring tool Netcare.
+    - Implement new features for Netcare.
+    - Added support for Server Monitoring in platform.
+    - Provide support to the users of our various tools.
+  - designation: Network operation Engineer
+    start: Mar 2021
+    end: Jan 2022
+    responsibilities:
+    - Slove the problem of network issue.
+    - Do the network operation.
+    - Help the users of our various tools.
+- company:
+    name: Sanfor Ltd.
+    url: https://www.sangfor.com/
+    location: WFH
+    # company overview
+    overview: Making Your Digital Transformation Simpler and Secure
+  positions:
+  - designation: Technological & Server Engineer
+    start: Mar 2020
+    end: Jul 2020
+    responsibilities:
+    - Slove the problem of network issue.
