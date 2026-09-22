@@ -1,0 +1,65 @@
+{{ $sectionID := replace (lower .section.name) " " "-" }}
+{{ with .section.id }}{{ $sectionID = . }}{{ end }}
+{{ $defaultLanguage := .defaultLanguage | default "en" }}
+
+<section class="container-fluid anchor pb-5 experiences-section bilingual-experiences" aria-labelledby="{{ $sectionID }}-heading">
+  <div class="container">
+    <div class="experience-section-header">
+      <h1 id="{{ $sectionID }}-heading"><span id="{{ $sectionID }}"></span>{{ .section.name }}</h1>
+      <div class="experience-language-switcher" role="group" aria-label="Experience language">
+        <button type="button" class="experience-language-button" data-experience-language="zh" aria-pressed="false">中文</button>
+        <button type="button" class="experience-language-button" data-experience-language="en" aria-pressed="false">English</button>
+      </div>
+    </div>
+
+    {{ range $language, $content := .languages }}
+      <div class="experience-language-panel" data-experience-panel="{{ $language }}" lang="{{ $language }}"{{ if ne $language $defaultLanguage }} hidden{{ end }}>
+        <div class="experience-introduction">
+          <h2>{{ $content.heading }}</h2>
+          <p>{{ $content.description }}</p>
+        </div>
+        <div class="experience-project-list">
+          {{ range $index, $project := $content.projects }}
+            <article class="experience-project-card">
+              <div class="experience-project-marker" aria-hidden="true">{{ add $index 1 }}</div>
+              <div class="experience-project-content">
+                <header class="experience-project-heading">
+                  <h3>{{ $project.title }}</h3>
+                  <span class="experience-project-period">{{ $project.period }}</span>
+                </header>
+                <p class="experience-project-summary">{{ $project.summary }}</p>
+                <ul>{{ range $project.highlights }}<li>{{ . }}</li>{{ end }}</ul>
+              </div>
+            </article>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+  </div>
+</section>
+
+<script>
+  (() => {
+    const section = document.querySelector('.bilingual-experiences');
+    if (!section) return;
+    const buttons = section.querySelectorAll('[data-experience-language]');
+    const panels = section.querySelectorAll('[data-experience-panel]');
+    const supported = Array.from(buttons, button => button.dataset.experienceLanguage);
+    let language = '{{ $defaultLanguage }}';
+    try {
+      const saved = localStorage.getItem('experience-language');
+      if (supported.includes(saved)) language = saved;
+    } catch (_) {}
+    const activate = selected => {
+      buttons.forEach(button => {
+        const active = button.dataset.experienceLanguage === selected;
+        button.classList.toggle('active', active);
+        button.setAttribute('aria-pressed', String(active));
+      });
+      panels.forEach(panel => { panel.hidden = panel.dataset.experiencePanel !== selected; });
+      try { localStorage.setItem('experience-language', selected); } catch (_) {}
+    };
+    buttons.forEach(button => button.addEventListener('click', () => activate(button.dataset.experienceLanguage)));
+    activate(language);
+  })();
+</script>

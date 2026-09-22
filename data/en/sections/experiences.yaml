@@ -1,51 +1,84 @@
-# section information
 section:
   name: Experiences
   id: experiences
   enable: true
   weight: 3
   showOnNavbar: true
-  # Can optionally hide the title in sections
-  # hideTitle: true 
+  template: sections/experiences.html
 
-# Your experiences
-experiences:
-- company:
-    name: ByteDance Ltd.
-    url: https://www.bytedance.com/en/
-    location: Chengdu, China
-    # company overview
-    overview: Building network automation and infrastructure platforms that improve operational efficiency and service reliability.
-  positions:
-  - designation: Platform Development Engineer
-    start: Jan 2023
-    responsibilities:
-    - Design and deliver CMDB capabilities for the Network as a Service (NaaS) platform.
-    - Develop backend services, data models, and event hooks for NaaS workflows.
-    - Partner with frontend engineers to define APIs and deliver end-to-end features.
-  - designation: Network Development Engineer
-    start: Jan 2022
-    end: Jan 2023
-    responsibilities:
-    - Designed, developed, and maintained the Netcare server monitoring platform.
-    - Delivered monitoring features and improved platform support for server health checks.
-    - Supported internal users and investigated production issues across automation tools.
-  - designation: Network Operations Engineer
-    start: Mar 2021
-    end: Jan 2022
-    responsibilities:
-    - Diagnosed and resolved network incidents to restore service quickly.
-    - Performed routine network operations, maintenance, and change execution.
-    - Supported users of internal network tools and documented recurring solutions.
-- company:
-    name: Sangfor Technologies
-    url: https://www.sangfor.com/
-    location: Remote
-    # company overview
-    overview: Supporting enterprise customers with secure infrastructure and server solutions.
-  positions:
-  - designation: Technical Support & Server Engineer
-    start: Mar 2020
-    end: Jul 2020
-    responsibilities:
-    - Diagnosed network and server issues and provided technical support to customers.
+defaultLanguage: en
+
+languages:
+  en:
+    heading: Project Experience
+    description: Selected network engineering, delivery, and platform development projects.
+    projects:
+    - title: ByteDance NaaS Network Delivery
+      period: Oct 2024 — Present
+      summary: Delivered Network as a Service solutions for more than 150 retail locations, covering hardware deployment, SD-WAN connectivity, centralized management, and lifecycle operations.
+      highlights:
+      - Designed and implemented a dual-region Hub-and-Spoke architecture with highly available cloud hubs and secure branch connectivity using AD-VPN and SD-WAN.
+      - Created standardized delivery templates and zero-touch deployment workflows, reducing average delivery time by 40% and operational effort by more than 60%.
+      - Established customer training and delivery documentation that enabled routine self-service operations and helped raise customer satisfaction to 5.0/5.0.
+
+    - title: ByteDance NaaS Network Operations Platform
+      period: Mar 2023 — Oct 2024
+      summary: Built lifecycle management, real-time monitoring, and observability capabilities for a NaaS platform serving more than 50 internal and external enterprise customers.
+      highlights:
+      - Designed and developed a site-profile module that aligned VictoriaMetrics time-series data with Amon monitoring data to provide multidimensional site-health visualization.
+      - Improved network health diagnosis efficiency by more than 30% through automated sampling alignment and data-fusion models.
+      - Architected the monitoring lifecycle backend and synchronized CMDB assets with monitoring systems in under five seconds, improving consistency and change traceability.
+      - Defined technical solutions and API standards for commercial automation and monitoring features.
+
+    - title: ByteDance Network Self-Service Backend Migration
+      period: Mar 2022 — Mar 2023
+      summary: Migrated and refactored more than 15 internal network self-service applications after the retirement of their original service platform.
+      highlights:
+      - Led project planning, workflow redesign, implementation, release validation, and regression testing.
+      - Integrated backend workflows with BlueCat, Cisco ISE, Aruba ClearPass, and CMDB systems, including task scheduling and state synchronization.
+      - Completed the migration on schedule without a major service interruption, preserving continuous access to network self-service functions.
+
+    - title: ByteDance Global DHCP High-Availability Enhancement
+      period: Sep 2021 — Dec 2021
+      summary: Strengthened global DHCP resilience by introducing an xHA architecture that provided disaster recovery and local autonomy during extended inter-region network outages.
+      highlights:
+      - Led vendor solution reviews and cutover planning, including risk controls, rollback procedures, and validation steps.
+      - Validated lease allocation, failover synchronization, and recovery latency throughout the migration.
+      - Completed the cutover with zero lease loss and less than five minutes of service interruption.
+
+  zh:
+    heading: 项目经历
+    description: 精选网络工程、项目交付与平台研发经历。
+    projects:
+    - title: 字节跳动 NaaS 网络售后交付项目
+      period: 2024.10 — 至今
+      summary: 面向全国 150+ 家零售门店交付 NaaS（Network as a Service）网络服务，覆盖硬件部署、SD-WAN 接入、集中管理和全生命周期运维。
+      highlights:
+      - 设计并实施双中心 Hub-and-Spoke 云互联架构，在公有云部署高可用 HUB，通过 AD-VPN 与 SD-WAN 实现全国门店安全互联。
+      - 制定标准化交付模板和零接触上线流程，将平均交付周期缩短 40%，运维人力投入降低 60% 以上。
+      - 建立客户培训与交付文档体系，帮助客户具备日常自运维能力，客户满意度提升至 5.0/5.0。
+
+    - title: 字节跳动 NaaS 网络运维平台项目
+      period: 2023.03 — 2024.10
+      summary: 为 NaaS 平台建设网络设备全生命周期管理、实时监控和可观测性能力，支撑 50+ 内外部企业客户接入。
+      highlights:
+      - 独立设计并开发站点画像模块，融合 VictoriaMetrics 时序数据与 Amon 监控数据，实现多维度站点健康状态可视化。
+      - 通过采样间隔自动对齐与多源数据融合，将网络健康诊断效率提升 30% 以上。
+      - 完成监控生命周期后端架构设计，实现 CMDB 资产与监控系统间低于 5 秒的状态同步，提升数据一致性与变更闭环能力。
+      - 参与商业化需求分析并制定技术方案与接口标准，推动自动化运维和可视化监控能力落地。
+
+    - title: 字节跳动网络自助服务后端迁移项目
+      period: 2022.03 — 2023.03
+      summary: 因原轻服务平台下线，迁移并重构 15+ 个内部网络自助应用，保障业务在新平台稳定运行并与核心网络系统对接。
+      highlights:
+      - 主导项目规划、流程重构、实施、上线验证和回归测试全过程。
+      - 完成与 BlueCat、Cisco ISE、Aruba ClearPass 及 CMDB 的后端集成，建设任务调度和状态同步机制。
+      - 所有应用按期平滑迁移，未发生重大服务中断，持续保障内部网络自助服务可用性。
+
+    - title: 字节跳动全球 DHCP 服务高可用加固项目
+      period: 2021.09 — 2021.12
+      summary: 通过建设 xHA 架构增强全球 DHCP 服务韧性，在跨地域网络长时间中断时提供容灾和本地自治能力。
+      highlights:
+      - 主导厂商方案评审和割接计划，明确风险控制点，制定回退方案与验证步骤。
+      - 在迁移过程中验证租约分配成功率、Failover 同步状态和故障切换时延。
+      - 实现零租约丢失，并将业务中断控制在 5 分钟以内。
