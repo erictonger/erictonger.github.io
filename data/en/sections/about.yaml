@@ -8,44 +8,24 @@ section:
   template: sections/about.html
 
 # your designation
-designation: Software Engineer
+designation: Network Automation & Platform Engineer
 # your company information
 company:
-  name: Example Co.
-  url: "https://www.example.com"
+  name: ByteDance
+  url: "https://www.bytedance.com/en/"
 
 # your resume. this file path should be relative to you "static" directory
-resume: "files/resume.pdf"
+# resume: "files/resume.pdf"
 
 # a summary about you
-summary: 'I am a passionate software engineer with x years of working experience. I built OSS tools for [Kubernetes](https://kubernetes.io/) using GO. My tools help people to deploy their workloads in Kubernetes. Sometimes, I work on some fun projects such as writing a theme, etc.'
+summary: 'I am a network automation and platform engineer focused on building reliable infrastructure tooling. My work spans CMDB and NaaS platform development, network monitoring, backend services, and day-to-day network operations. I enjoy turning operational problems into maintainable automation.'
 
 # your social links
 # give as many as you want. use font-awesome for the icons.
 socialLinks:
-- name: Email
-  icon: "fas fa-envelope"
-  url: "example@gmail.com"
-
 - name: Github
   icon: "fab fa-github"
-  url: "https://www.github.com/example"
-
-- name: Stackoverflow
-  icon: "fab fa-stack-overflow"
-  url: "#"
-
-- name: LinkedIn
-  icon: "fab fa-linkedin"
-  url: "#"
-
-- name: Twitter
-  icon: "fab fa-twitter"
-  url: "#"
-
-- name: Facebook
-  icon: "fab fa-facebook"
-  url: "#"
+  url: "https://github.com/erictonger"
 
 # Show your badges
 # You can show your verifiable certificates from https://www.credly.com.
@@ -54,17 +34,17 @@ badges:
 - type: certification
   name: Huawei Certified ICT Expert - Routing & Switching (HCIE-Routing & Switching)
   url: "https://www.credly.com/org/huawei/badge/huawei-certified-ict-expert-routing-switching-hcie-routing-switching"
-  badge: "https://images.credly.com/images/cae7ee92-0a47-486b-93a6-72a2f0990d37/Huawei_Badge_Visuals1009-06.png"
+  badge: "/images/certifications/hcie-routing-switching.png"
 
 - type: certification
   name: Red Hat Certified Engineer (RHCE)
   url: "https://www.credly.com/org/red-hat-inc/badge/red-hat-certified-engineer-rhce"
-  badge: "https://images.credly.com/size/340x340/images/19c4e804-54fe-4857-b022-7cfd5520596c/image.png"
+  badge: "/images/certifications/rhce.png"
 
 - type: certification
-  name: Huawei Certified ICT Expert - Datacom (HCIE-Datacom)
-  url: "https://www.credly.com/org/huawei/badge/huawei-certified-ict-expert-datacom-hcie-datacom"
-  badge: "https://images.credly.com/images/53549a05-47b4-4638-afe0-c9bf57f03c64/image.png"
+  name: Fortinet NSE 7 / FCSS Secure Networking
+  url: "https://www.credly.com/org/fortinet/badge/fortinet-certified-solution-specialist-secure-netwo"
+  badge: "/images/certifications/fortinet-fcss-secure-networking.png"
 
 - type: soft-skill-indicator
   name: Learning ability

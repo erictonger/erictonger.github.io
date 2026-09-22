@@ -11,42 +11,41 @@ section:
 # Your experiences
 experiences:
 - company:
-    name: Bytedance Ltd.
+    name: ByteDance Ltd.
     url: https://www.bytedance.com/en/
-    location: CDC, China
+    location: Chengdu, China
     # company overview
-    overview: At ByteDance, we call our values "ByteStyles." They help guide how we work together, and how we aim to bring our Mission and Vision to life.
+    overview: Building network automation and infrastructure platforms that improve operational efficiency and service reliability.
   positions:
-  - designation: Platform development Engineer
+  - designation: Platform Development Engineer
     start: Jan 2023
     responsibilities:
-    - Develop the start cmdb new features for NaaS Project.
-    - Develop the back-end of NaaS, such CMDB and Hooks.
-    - Collaborate with front-end team for integration of new-features.
-  - designation: Network development Engineer
+    - Design and deliver CMDB capabilities for the Network as a Service (NaaS) platform.
+    - Develop backend services, data models, and event hooks for NaaS workflows.
+    - Partner with frontend engineers to define APIs and deliver end-to-end features.
+  - designation: Network Development Engineer
     start: Jan 2022
     end: Jan 2023
     responsibilities:
-    - Design, develop and manage basic Server Monitoring tool Netcare.
-    - Implement new features for Netcare.
-    - Added support for Server Monitoring in platform.
-    - Provide support to the users of our various tools.
-  - designation: Network operation Engineer
+    - Designed, developed, and maintained the Netcare server monitoring platform.
+    - Delivered monitoring features and improved platform support for server health checks.
+    - Supported internal users and investigated production issues across automation tools.
+  - designation: Network Operations Engineer
     start: Mar 2021
     end: Jan 2022
     responsibilities:
-    - Slove the problem of network issue.
-    - Do the network operation.
-    - Help the users of our various tools.
+    - Diagnosed and resolved network incidents to restore service quickly.
+    - Performed routine network operations, maintenance, and change execution.
+    - Supported users of internal network tools and documented recurring solutions.
 - company:
-    name: Sanfor Ltd.
+    name: Sangfor Technologies
     url: https://www.sangfor.com/
-    location: WFH
+    location: Remote
     # company overview
-    overview: Making Your Digital Transformation Simpler and Secure
+    overview: Supporting enterprise customers with secure infrastructure and server solutions.
   positions:
-  - designation: Technological & Server Engineer
+  - designation: Technical Support & Server Engineer
     start: Mar 2020
     end: Jul 2020
     responsibilities:
-    - Slove the problem of network issue.
+    - Diagnosed network and server issues and provided technical support to customers.
